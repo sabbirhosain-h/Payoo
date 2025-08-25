@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main</title>
+
+     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+</head>
+<body class="bg-[#f4f5f7] ">
+  <nav class="flex justify-between items-center p-5 mx-auto border-b-1 border-gray-500 h-[84px] max-w-lg">
+    <div class="">
+       <div class="flex flex-row items-center gap-3">
+        <img src="./recourses/assets/Group.png" class="h-[48px] w-[51px]" alt="">
+        <div>
+            <h1 class="text-black-800">$<span id="accBalance">45000</span></h1>
+            <p class="text-black-300 text-[#08080880]">Available Balance</p>
+        </div>
+       </div>
+    </div>
+
+    <div class="">
+        <button class="p-2 rounded-lg mt-2 border-1 border-[#0808081a]"><i class="fa-solid fa-arrow-right-from-bracket rotate-180"></i><span id="logout">Log Out</span> </button>
+    </div>
+  </nav>
+
+<section class="max-w-lg mx-auto mt-15">
+    <div class=""> 
+        <h1 class="text-2xl font-bold mb-4">🔥Welcome to Payooo!</h1>
+        <p class="text-16px text-[#08080880]">Enjoy easy and convenient financial services with us. <br> Cashout charge is low and </p>
+    </div>
+
+
+<div class="grid grid-cols-3 grid-rows-2 gap-6 my-4">
+<div id="btn-1" class="hover:border-[#0874f2] border-1 border-[#0808081a] rounded-2xl min-h-[100px]"><img class="mx-auto p-6" src="./recourses/assets/wallet1.png" alt=""><p class="hover:text-20px hover:text-[#0874f2] text-center mb-4 text-12px text-[#080808b3]">Add Money</p></div>
+<div id="btn-2" class="hover:border-[#0874f2] border-1 border-[#0808081a] rounded-2xl min-h-[100px]"><img class="mx-auto p-6" src="./recourses/assets/send1.png" alt=""><p class="hover:text-20px hover:text-[#0874f2] text-center mb-4 text-12px text-[#080808b3]">Cashout</p></div>
+<div id="btn-3" class="hover:border-[#0874f2] border-1 border-[#0808081a] rounded-2xl min-h-[100px]"><img class="mx-auto p-6" src="./recourses/assets/money1.png" alt=""><p class="hover:text-20px hover:text-[#0874f2] text-center mb-4 text-12px text-[#080808b3]">Transfer Money</p></div>
+<div id="btn-4" class="hover:border-[#0874f2] border-1 border-[#0808081a] rounded-2xl min-h-[100px]"><img class="mx-auto p-6" src="./recourses/assets/bonus1.png" alt=""><p class="hover:text-20px hover:text-[#0874f2] text-center mb-4 text-12px text-[#080808b3]">Get bonus</p></div>
+<div id="btn-5" class="hover:border-[#0874f2] border-1 border-[#0808081a] rounded-2xl min-h-[100px]"><img class="mx-auto p-6" src="./recourses/assets/purse1.png" alt=""><p class="hover:text-20px hover:text-[#0874f2] text-center mb-4 text-12px text-[#080808b3]">Pay Bill</p></div>
+<div id="btn-6" class="hover:border-[#0874f2] border-1 border-[#0808081a] rounded-2xl min-h-[100px]"><img class="mx-auto p-6" src="./recourses/assets/transaction1.png" alt=""><p class="hover:text-20px hover:text-[#0874f2] text-center mb-4 text-12px text-[#080808b3]">Transactions</p></div>
+</div>
+    
+</section>
+
+
+<!-- Add money -->
+<section style="display: none;"  id="Add-money-section" class="max-w-lg mx-auto rounded-2xl h-[1000px]">
+    <h1 class="text-2xl font-bold mb-4 mt-8 max-w-lg mx-auto">Add Money</h1>
+
+<form class="bg-white max-w-lg p-5 rounded-lg flex flex-col gap-0">
+    <label class="font-500 text-[#080808b3]">Select A Bank</label>
+
+     <!-- <input  type="text" placeholder=" Select A bank" class="bg-[#f4f5f7] rounded-xl mt-2 h-10">  -->
+     <select id="bank" class="w-full bg-[#f4f5f7] rounded-xl mt-2 h-10 p-2 rounded-lg   focus:outline-none focus:ring-2 focus:ring-blue-400">
+  <option value="">Select Bank</option>
+  <option value="AB Bank">AB Bank</option>
+  <option value="Uttora Bank">Uttora Bank</option>
+  <option value="City Bank">City Bank</option>
+  </select>  
+
+    <label class="font-500 text-[#080808b3] mt-2">Bank Account Number</label>
+
+    <input id="bank-account-number"  type="text" placeholder=" Enter 11 digit account number" class="bg-[#f4f5f7] rounded-xl mt-2 h-10">
+
+    <label class="font-500 text-[#080808b3] mt-2">Amount to Add</label>
+
+    <input id="amount-to-add" type="text" placeholder=" Add Amount to withdraw" class="bg-[#f4f5f7] rounded-xl mt-2 h-10">
+
+    <label class="font-500 text-[#080808b3] mt-2">Pin Number</label>
+
+    <input id="pin-number" type="text" placeholder=" Enter 4 digit pin number" class="bg-[#f4f5f7] rounded-xl mt-2 mb-4 h-10">
+
+      <button type="button" id="add-money-button" class="w-full bg-[#0874F2] text-white py-2 rounded-2xl mb-4">Add Money</button>
+</form>
+
+</section> 
+<script src="./all js/addmoney.js"></script>
+
+<!-- Cashout -->
+<section style="display: none;" id="Cashout-section" class="max-w-lg mx-auto rounded-2xl h-[1000px]">
+    <h1 class="text-2xl font-bold mb-4 mt-8 max-w-lg mx-auto">Cash Out</h1>
+
+<form class="bg-white max-w-lg p-5 rounded-lg flex flex-col gap-0">
+    <label class="font-500 text-[#080808b3]">Agent Number</label>
+
+    <input id="agent-number" type="text" placeholder=" Enter 11 digit number" class="bg-[#f4f5f7] rounded-xl mt-2 h-10">
+
+    <label class="font-500 text-[#080808b3] mt-2">Amount</label>
+
+    <input id="withdrawal-amount"  type="text" placeholder=" Enter amount to withdraw" class="bg-[#f4f5f7] rounded-xl mt-2 h-10">
+
+    <label class="font-500 text-[#080808b3] mt-2">Pin Number</label>
+
+    <input id="pin-number" type="text" placeholder=" Enter 4 digit pin number" class="bg-[#f4f5f7] rounded-xl mt-2 mb-4 h-10">
+
+      <button type="button" id="withdraw-button" class="w-full bg-[#0874F2] text-white py-2 rounded-2xl mb-4">Withdraw Money</button>
+</form>
+</section>
+<script src="./all js/cashout.js"></script>
+
+
+<!-- transfer money -->
+<section style="display: none;" id="transfer-section" class="max-w-lg mx-auto rounded-2xl h-[1000px]">
+    <h1 class="text-2xl font-bold mb-4 mt-8 max-w-lg mx-auto">Transfer Money</h1>
+
+<form class="bg-white max-w-lg p-5 rounded-lg flex flex-col gap-0">
+    <label class="font-500 text-[#080808b3]">User Account Number</label>
+
+    <input id="transfer-number" type="text" placeholder=" Enter 11 digit number" class="bg-[#f4f5f7] rounded-xl mt-2 h-10">
+
+    <label class="font-500 text-[#080808b3] mt-2">Amount</label>
+
+    <input id="transfer-amount"  type="text" placeholder=" Enter amount to transfer" class="bg-[#f4f5f7] rounded-xl mt-2 h-10">
+
+    <label class="font-500 text-[#080808b3] mt-2">Pin Number</label>
+
+    <input id="pin-number" type="text" placeholder=" Enter 4 digit pin number" class="bg-[#f4f5f7] rounded-xl mt-2 mb-4 h-10">
+
+      <button type="button" id="transfer-button" class="w-full bg-[#0874F2] text-white py-2 rounded-2xl mb-4">Send Now</button>
+</form>
+</section>
+<script src="./all js/transfer.js"></script>
+
+
+<!-- bonus money -->
+ <section style="display: none;" id="Bonus-section" class="max-w-lg mx-auto rounded-2xl h-[1000px]">
+    <h1 class="text-2xl font-bold mb-4 mt-8 max-w-lg mx-auto">Get Bonus</h1>
+
+<form class="bg-white max-w-lg p-5 rounded-lg flex flex-col gap-0">
+    <label class="font-500 text-[#080808b3]"> Enter Bonus Coupon</label>
+
+    <input id="Bonus-amount" type="text" placeholder=" Enter your coupon" class="bg-[#f4f5f7] rounded-xl mt-2 h-10">
+
+  <button type="button" id="bonus-button" class="w-full bg-[#0874F2] text-white py-2 rounded-2xl mb-4 mt-8">Get Bonus</button>
+</form>
+</section>
+<script src="./all js/bonus.js"></script>
+
+<!-- pay bill -->
+<section style="display: none;" id="Paybill-section" class="max-w-lg mx-auto rounded-2xl h-[1000px]">
+    <h1 class="text-2xl font-bold mb-4 mt-8 max-w-lg mx-auto">Pay Bill</h1>
+
+<form class="bg-white max-w-lg p-5 rounded-lg flex flex-col gap-0">
+    <label class="font-500 text-[#080808b3]">Select To Pay</label>
+
+     <!-- <input  type="text" placeholder=" Select A bank" class="bg-[#f4f5f7] rounded-xl mt-2 h-10">  -->
+     <select id="bank" aria-placeholder="Select Bank" class="w-full bg-[#f4f5f7] rounded-xl mt-2 h-10 p-2 rounded-lg   focus:outline-none focus:ring-2 focus:ring-blue-400">
+  <option value="">Select Bank</option>
+  <option value="AB Bank">AB Bank</option>
+  <option value="Uttora Bank">Uttora Bank</option>
+  <option value="City Bank">City Bank</option>
+  </select>  
+
+    <label class="font-500 text-[#080808b3] mt-2">Biller Account Number</label>
+
+    <input id="biller-account-number"  type="text" placeholder=" Enter account number" class="bg-[#f4f5f7] rounded-xl mt-2 h-10">
+
+    <label class="font-500 text-[#080808b3] mt-2">Amount to Pay</label>
+
+    <input id="amount-to-pay" type="text" placeholder=" Add Amount to pay" class="bg-[#f4f5f7] rounded-xl mt-2 h-10">
+
+    <label class="font-500 text-[#080808b3] mt-2">Pin Number</label>
+
+    <input id="pin-number2" type="text" placeholder=" Enter 4 digit pin number" class="bg-[#f4f5f7] rounded-xl mt-2 mb-4 h-10">
+
+      <button type="button" id="Paybill-button" class="w-full bg-[#0874F2] text-white py-2 rounded-2xl mb-4">Pay Now</button>
+</form>
+
+</section> 
+
+<!-- transaction -->
+<section style="display: none;" id="transaction-section" class="max-w-lg mx-auto rounded-2xl h-[1000px]">
+
+<div class="flex justify-between items-center">
+    <h1 class="text-2xl font-bold text-left">Transaction History</h1>
+    <p class="text-[#08080880] text-12px text-center">View all</p>
+</div>
+
+<div>
+    
+    <div class="flex justify-between items-center border-b-2 border-gray-200 py-4">
+       <div class="flex flex-row items-center gap-3">
+             <img src="./recourses/assets/wallet1.png" class="h-[20px] w-[23px]" alt="">
+                <div>
+                  <h1 class="text-black-800">Electricity Bill</h1>
+                  <p class="text-black-300 text-[#08080880]">Today 01:44 AM</p>
+                 </div>
+         </div>
+                 <div class="">
+                   <button><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                </div>
+    </div>
+    <div class="flex justify-between items-center border-b-2 border-gray-200 py-4">
+       <div class="flex flex-row items-center gap-3">
+             <img src="./recourses/assets/wallet1.png" class="h-[20px] w-[23px]" alt="">
+                <div>
+                  <h1 class="text-black-800">Bank Deposit</h1>
+                  <p class="text-black-300 text-[#08080880]">Today 01:44 AM</p>
+                 </div>
+         </div>
+                 <div class="">
+                   <button><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                </div>
+    </div>
+    <div class="flex justify-between items-center border-b-2 border-gray-200 py-4">
+       <div class="flex flex-row items-center gap-3">
+             <img src="./recourses/assets/wallet1.png" class="h-[20px] w-[23px]" alt="">
+                <div>
+                  <h1 class="text-black-800">Mobile Recharge</h1>
+                  <p class="text-black-300 text-[#08080880]">Today 01:44 AM</p>
+                 </div>
+         </div>
+                 <div class="">
+                   <button><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                </div>
+    </div>
+    <div class="flex justify-between items-center border-b-2 border-gray-200 py-4">
+       <div class="flex flex-row items-center gap-3">
+             <img src="./recourses/assets/wallet1.png" class="h-[20px] w-[23px]" alt="">
+                <div>
+                  <h1 class="text-black-800">Gas Bill</h1>
+                  <p class="text-black-300 text-[#08080880]">Today 01:44 AM</p>
+                 </div>
+         </div>
+                 <div class="">
+                   <button><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                </div>
+    </div>
+
+
+
+
+  </div> 
+
+
+    
+</section>
+
+
+
+
+
+
+
+
+
+<!-- toggle -->
+<script>
+ document.getElementById('btn-1').addEventListener('click', function() {
+    document.getElementById('Add-money-section').style.display = 'block';
+    document.getElementById('Cashout-section').style.display = 'none';
+    document.getElementById('transfer-section').style.display = 'none';
+    document.getElementById('Bonus-section').style.display = 'none';
+    document.getElementById('transaction-section').style.display = 'none';
+ });
+ document.getElementById('btn-2').addEventListener('click', function() {
+    document.getElementById('Cashout-section').style.display = 'block';
+    document.getElementById('Add-money-section').style.display = 'none';
+    document.getElementById('transfer-section').style.display = 'none';
+    document.getElementById('Bonus-section').style.display = 'none';
+    document.getElementById('Paybill-section').style.display = 'none';
+    document.getElementById('transaction-section').style.display = 'none';
+
+ });
+ document.getElementById('btn-3').addEventListener('click', function() {
+    document.getElementById('transfer-section').style.display = 'block';
+    document.getElementById('Add-money-section').style.display = 'none';
+    document.getElementById('Cashout-section').style.display = 'none';
+    document.getElementById('Bonus-section').style.display = 'none';
+    document.getElementById('Paybill-section').style.display = 'none';
+    document.getElementById('transaction-section').style.display = 'none';
+ });
+ document.getElementById('btn-4').addEventListener('click', function() {
+    document.getElementById('Bonus-section').style.display = 'block';
+    document.getElementById('Add-money-section').style.display = 'none';
+    document.getElementById('Cashout-section').style.display = 'none';
+    document.getElementById('transfer-section').style.display = 'none';
+    document.getElementById('Paybill-section').style.display = 'none';
+    document.getElementById('transaction-section').style.display = 'none';
+ });
+ document.getElementById('btn-5').addEventListener('click', function() {
+    document.getElementById('Paybill-section').style.display = 'block';
+    document.getElementById('Add-money-section').style.display = 'none';
+    document.getElementById('Cashout-section').style.display = 'none';
+    document.getElementById('transfer-section').style.display = 'none';
+    document.getElementById('Bonus-section').style.display = 'none';
+    document.getElementById('transaction-section').style.display = 'none';
+ });
+ document.getElementById('btn-6').addEventListener('click', function() {
+    document.getElementById('transaction-section').style.display = 'block';
+    document.getElementById('Add-money-section').style.display = 'none';
+    document.getElementById('Cashout-section').style.display = 'none';
+    document.getElementById('transfer-section').style.display = 'none';
+    document.getElementById('Bonus-section').style.display = 'none';
+    document.getElementById('Paybill-section').style.display = 'none';
+ });
+
+document.getElementById('logout').addEventListener('click', function() {
+    window.location.href = 'index.html';
+});
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="./all js/addmoney.js"></script>
+
+</body>
+</html>
