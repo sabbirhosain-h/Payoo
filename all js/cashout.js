@@ -9,8 +9,8 @@
         const y = 1234;
 
             if(agentNumber === x && pinNumber === y && withdralAmount <= accBalance){
-                newAccBalance = accBalance - withdralAmount;
-                document.getElementById("accBalance").innerText = newAccBalance;
+                accBalance = accBalance - withdralAmount;
+                document.getElementById("accBalance").innerText = accBalance;
     
             } else {
                 console.log("Withdrawal failed");
